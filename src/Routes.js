@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import { Main } from "./Pages/Main/Main";
-import { Details} from "./Pages/Details/Details";
+import { Details } from "./Pages/Details/Details";
 
 class Routes extends React.Component{
   render(){
@@ -13,7 +12,7 @@ class Routes extends React.Component{
           <Route exact path="/Details" Component={Details} />
         </Switch>
       </Router>
-    )
+    );
   }
 }
 

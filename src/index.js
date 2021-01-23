@@ -4,7 +4,5 @@ import reportWebVitals from './reportWebVitals';
 import Routes from "./Routes";
 import "./Styles/Common.scss";
 
-ReactDOM.render(<Routes />, document.getElementById('root')
-);
-
+ReactDOM.render(<Routes />, document.getElementById('root'));
 reportWebVitals();
