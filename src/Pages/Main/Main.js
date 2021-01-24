@@ -6,7 +6,7 @@ export class Main extends React.Component{
   render(){
     return(
       <div className="main">
-        <div>안녕하세요?</div>
+        <h1>안녕하세요!</h1>
       </div>
     );
   }
