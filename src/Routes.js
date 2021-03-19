@@ -1,19 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Main } from "./Pages/Main/Main";
-import { Details} from "./Pages/Details/Details";
+import { Todolist } from "./fastcampus/Todolist";
 
-class Routes extends React.Component{
-  render(){
+class Routes extends React.Component {
+  render() {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" Component={Main} />
-          <Route exact path="/Details" Component={Details} />
+          <Route exact path="/todolist" component={Todolist} />
         </Switch>
       </Router>
-    )
+    );
   }
 }
 
