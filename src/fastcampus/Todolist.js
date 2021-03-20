@@ -2,6 +2,7 @@ import React from "react";
 import { TodoTemplate } from "./Componets/TodoTemplate";
 import { TodoHead } from "./Componets/TodoHead";
 import { TodoContents } from "./Componets/TodoContents";
+import { TodoItems } from "./Componets/TodoItems";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -15,6 +16,7 @@ export const Todolist = () => {
       <TodoTemplate>
         <TodoHead />
         <TodoContents />
+        <TodoItems />
       </TodoTemplate>
     </>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { TodoItems } from "./TodoItems";
 
 const TodoContentsBlock = styled.div`
   flex: 1;
@@ -9,5 +10,11 @@ const TodoContentsBlock = styled.div`
 `;
 
 export const TodoContents = () => {
-  return <TodoContentsBlock>안녕하세요</TodoContentsBlock>;
+  return (
+    <TodoContentsBlock>
+      <TodoItems text="정지원" done={true} />
+      <TodoItems text="태성현" done={true} />
+      <TodoItems text="문규찬" done={false} />
+    </TodoContentsBlock>
+  );
 };
