@@ -15,6 +15,7 @@ export const TodoContents = () => {
       <TodoItems text="정지원" done={true} />
       <TodoItems text="태성현" done={true} />
       <TodoItems text="문규찬" done={false} />
+      <TodoItems text="김승완" done={false} />
     </TodoContentsBlock>
   );
 };
