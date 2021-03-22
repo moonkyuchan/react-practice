@@ -46,12 +46,48 @@ const CircleButton = styled.button`
     `};
 `;
 
+const InsertFormPositioner = styled.div`
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+`;
+
+const InsertForm = styled.div`
+  background: #f8f9fa;
+  padding: 32px;
+  padding-bottom: 72px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top: 1px solid #e9ecef;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  font-size: 18px;
+  outline: none;
+  box-sizing: border-box;
+`;
+
 export const TodoCreate = () => {
   const [open, SetOpen] = useState(false);
   const onToggle = () => SetOpen(!open);
+
   return (
-    <CircleButton onClick={onToggle} open={open}>
-      <MdAdd />
-    </CircleButton>
+    <>
+      {open && (
+        <InsertFormPositioner>
+          <InsertForm>
+            <Input placeholder="할 일을 입력 후, Enter를 누르세요" autoFocus />
+          </InsertForm>
+        </InsertFormPositioner>
+      )}
+      <CircleButton onClick={onToggle} open={open}>
+        <MdAdd />
+      </CircleButton>
+    </>
   );
 };

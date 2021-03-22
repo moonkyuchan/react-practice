@@ -4,6 +4,7 @@ import { TodoHead } from "./Componets/TodoHead";
 import { TodoContents } from "./Componets/TodoContents";
 import { createGlobalStyle } from "styled-components";
 import { TodoCreate } from "./Componets/TodoCreate";
+import { TodoProvider } from "./Context";
 
 const GlobalStyle = createGlobalStyle`
   body{background : #e9ecef;}
@@ -11,14 +12,14 @@ const GlobalStyle = createGlobalStyle`
 
 export const Todolist = () => {
   return (
-    <>
+    <TodoProvider>
       <GlobalStyle />
       <TodoTemplate>
         <TodoHead />
         <TodoContents />
         <TodoCreate />
       </TodoTemplate>
-    </>
+    </TodoProvider>
   );
 };
 
