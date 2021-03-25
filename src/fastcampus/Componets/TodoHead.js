@@ -23,10 +23,21 @@ const TodoHeadBlock = styled.div`
 `;
 
 export const TodoHead = () => {
+  const today = new Date();
+  const dateString = today.toLocaleDateString("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const dayName = today.toLocaleDateString("ko-KR", {
+    weekday: "long",
+  });
+
   return (
     <TodoHeadBlock>
-      <h1>2021년 3월 19일</h1>
-      <div clasName="day">일요일</div>
+      <h1>{dateString}</h1>
+      <div clasName="day">{dayName}</div>
       <div className="tasks-left">할 일 2개 남음</div>
     </TodoHeadBlock>
   );
