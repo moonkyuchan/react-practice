@@ -5,9 +5,9 @@ import { TopFirst } from "./TopFirst";
 
 export const Top = () => {
   const [USERS, setUSERS] = useState([
-    { id: 1, userName: "문규찬", email: "kyu_90@naver.com" },
-    { id: 2, userName: "규찬문", email: "lee@naver.com" },
-    { id: 3, userName: "찬규문", email: "sanoullim@naver.com" },
+    { id: 1, userName: "문규찬", email: "kyu_90@naver.com", active: true },
+    { id: 2, userName: "규찬문", email: "lee@naver.com", active: false },
+    { id: 3, userName: "찬규문", email: "sanoullim@naver.com", active: false },
   ]);
   // data 부분 state 로 관리
 
@@ -33,9 +33,21 @@ export const Top = () => {
       userName,
       email,
     };
-    setUSERS([...USERS, user]);
+    setUSERS(USERS.concat(user));
     setInputs({ userName: "", email: "" });
     nextId.current += 1;
+  };
+
+  const onRemove = (id) => {
+    setUSERS(USERS.filter((user) => user.id !== id));
+  };
+
+  const onToggle = (id) => {
+    setUSERS(
+      USERS.map((user) =>
+        user.id === id ? { ...user, active: !user.active } : user
+      )
+    );
   };
 
   return (
@@ -46,7 +58,7 @@ export const Top = () => {
         onChange={onChange}
         onCreate={onCreate}
       />
-      <TopFirst users={USERS} />
+      <TopFirst users={USERS} onRemove={onRemove} onToggle={onToggle} />
     </TopWrap>
   );
 };
