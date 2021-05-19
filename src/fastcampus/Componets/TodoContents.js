@@ -15,7 +15,7 @@ export const TodoContents = () => {
 
   return (
     <TodoContentsBlock>
-      {todos.map((todo) => (
+      {todos?.map((todo) => (
         <TodoItems
           key={todo.key}
           id={todo.id}
