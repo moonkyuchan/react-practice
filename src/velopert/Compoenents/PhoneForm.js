@@ -15,8 +15,7 @@ const PhoneForm = ({ onCreate }) => {
 
   const submitClick = (e) => {
     e.preventDefault();
-    onCreate(name);
-    onCreate(phone);
+    onCreate({ name, phone });
     setName("");
     setPhone("");
   };

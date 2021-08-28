@@ -6,7 +6,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { Counter } from "./velopert/Counter";
 // import { Info } from "./velopert/Info";
 // import { Top } from "./velopert/Top";
-import Immutable from "./velopert/Immutable";
+// import Immutable from "./velopert/Immutable";
+// import Jsx from "./Official/Jsx";
+import Clock from "./Official/Clock";
 
 class Routes extends React.Component {
   render() {
@@ -18,7 +20,7 @@ class Routes extends React.Component {
           {/* <Route exact path="/" component={Counter} /> */}
           {/* <Route exact path="/info" component={Info} /> */}
           {/* <Route exact path="/top" component={Top} /> */}
-          <Route exact path="/" component={Immutable} />
+          <Route exact path="/" component={Clock} />
         </Switch>
       </Router>
     );
