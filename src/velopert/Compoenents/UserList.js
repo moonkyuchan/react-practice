@@ -1,18 +1,40 @@
-import React from "react";
-import User from "./user";
+import React, { useEffect } from "react";
 
-const UserList = ({ users }) => {
-  const renderUsers = () => {
-    return users.users.map((data) => {
-      return <User key={data.id} users={data} />;
-    });
-  };
-  console.log("Userlist가 렌더되고있어요");
-
+const User = ({ users, onRemove, onToggle }) => {
+  useEffect(() => {
+    console.log("users값이 설정됨");
+    console.log(users);
+    return () => {
+      console.log("users가 바뀌기 전...");
+      console.log(users);
+    };
+  }, [users]);
   return (
-    <>
-      <div>{renderUsers}</div>
-    </>
+    <div>
+      <b
+        style={{ cursor: "pointer", color: users.active ? "green" : "black" }}
+        onClick={() => onToggle(users.id)}
+      >
+        {users.username}
+      </b>
+      <span>( {users.email} )</span>
+      <button onClick={() => onRemove(users.id)}>삭제</button>
+    </div>
+  );
+};
+
+const UserList = ({ users, onRemove, onToggle }) => {
+  return (
+    <div>
+      {users.map((data) => (
+        <User
+          users={data}
+          key={data.id}
+          onRemove={onRemove}
+          onToggle={onToggle}
+        />
+      ))}
+    </div>
   );
 };
 
