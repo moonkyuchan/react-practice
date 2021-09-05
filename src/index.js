@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 // import ThisTest from "./Official/ThisTest";
 // import Hooks from "./Official/Hooks";
 // import BasicApp from "./Basic/BasicApp";
-import VelopertApp from "./velopert/VelopertApp";
+// import VelopertApp from "./velopert/VelopertApp";
+import StyledTest from "./velopert/Styled-Components/StyledTest";
 
-ReactDOM.render(<VelopertApp />, document.getElementById("root"));
+ReactDOM.render(<StyledTest />, document.getElementById("root"));
