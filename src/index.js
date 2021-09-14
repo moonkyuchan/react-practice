@@ -7,6 +7,7 @@ import ReactDOM from "react-dom";
 // import Hooks from "./Official/Hooks";
 // import BasicApp from "./Basic/BasicApp";
 // import VelopertApp from "./velopert/VelopertApp";
-import StyledTest from "./velopert/Styled-Components/StyledTest";
+// import StyledTest from "./velopert/Styled-Components/StyledTest";
+import VelopertTodoList from "./velopert/TodoList/VelopertTodoList";
 
-ReactDOM.render(<StyledTest />, document.getElementById("root"));
+ReactDOM.render(<VelopertTodoList />, document.getElementById("root"));
