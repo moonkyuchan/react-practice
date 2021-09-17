@@ -1,14 +1,17 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { deleteList } from "../../Store/Actions/index";
 
 const TodoItems = ({ id, done, text }) => {
+  const dispatch = useDispatch();
   return (
-    <TodoItemsBlock>
+    <TodoItemsBlock id={id}>
       <CheckCircle dont={done}>{done && <MdDone />}</CheckCircle>
       <Text done={done}>{text}</Text>
       <Remove>
-        <MdDelete />
+        <MdDelete onClick={() => dispatch(deleteList)} />
       </Remove>
     </TodoItemsBlock>
   );

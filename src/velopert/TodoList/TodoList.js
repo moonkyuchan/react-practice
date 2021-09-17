@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import TodoItems from "./TodoItems";
+import { useSelector } from "react-redux";
 
 const TodoList = () => {
+  const todoItems = useSelector((store) => store.todoReducer);
   return (
     <TodoListBlock>
-      <TodoItems text="리액트" done={true} />
-      <TodoItems text="자바스킄립트" done={true} />
-      <TodoItems text="타입스크립트" done={false} />
+      {todoItems.map((data) => {
+        return <TodoItems key={data.id} text={data.text} done={data.done} />;
+      })}
     </TodoListBlock>
   );
 };

@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const TodoHead = () => {
+  const count = useSelector((store) => store.todoReducer);
+
   return (
     <TodoHeadBlock>
       <h1>2021년 9월 14일</h1>
       <div className="day">화요일</div>
-      <div className="tasks-left">할 일 2개 남음</div>
+      <div className="tasks-left">할 일 {count.length}개 남음</div>
     </TodoHeadBlock>
   );
 };
