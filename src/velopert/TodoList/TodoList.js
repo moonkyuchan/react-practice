@@ -1,14 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import TodoItems from "./TodoItems";
-import { useSelector } from "react-redux";
+import { useTodoState } from "./ContextAPI/TodoContext";
 
 const TodoList = () => {
-  const todoItems = useSelector((store) => store.todoReducer);
+  const todos = useTodoState();
   return (
     <TodoListBlock>
-      {todoItems.map((data) => {
-        return <TodoItems key={data.id} text={data.text} done={data.done} />;
+      {todos.map((todo) => {
+        return (
+          <TodoItems
+            key={todo.id}
+            id={todo.id}
+            text={todo.text}
+            done={todo.done}
+          />
+        );
       })}
     </TodoListBlock>
   );

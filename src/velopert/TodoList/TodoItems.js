@@ -1,17 +1,24 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { deleteList } from "../../Store/Actions/index";
+import { useTodoDispatch } from "./ContextAPI/TodoContext";
 
 const TodoItems = ({ id, done, text }) => {
-  const dispatch = useDispatch();
+  const dispatch = useTodoDispatch();
+  const onToggle = () => {
+    dispatch({ type: "TOGGLE", id });
+  };
+  const onRemove = () => {
+    dispatch({ type: "REMOVE", id });
+  };
   return (
     <TodoItemsBlock id={id}>
-      <CheckCircle dont={done}>{done && <MdDone />}</CheckCircle>
+      <CheckCircle done={done} onClick={onToggle}>
+        {done && <MdDone />}
+      </CheckCircle>
       <Text done={done}>{text}</Text>
-      <Remove>
-        <MdDelete onClick={() => dispatch(deleteList)} />
+      <Remove onClick={onRemove}>
+        <MdDelete />
       </Remove>
     </TodoItemsBlock>
   );
@@ -72,4 +79,4 @@ const Text = styled.div`
     `}
 `;
 
-export default TodoItems;
+export default React.memo(TodoItems);

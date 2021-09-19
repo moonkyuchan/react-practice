@@ -9,17 +9,5 @@ import ReactDOM from "react-dom";
 // import VelopertApp from "./velopert/VelopertApp";
 // import StyledTest from "./velopert/Styled-Components/StyledTest";
 import VelopertTodoList from "./velopert/TodoList/VelopertTodoList";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import rootReducer from "./Store/Reducers";
 
-const store = createStore(rootReducer);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <VelopertTodoList />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<VelopertTodoList />, document.getElementById("root"));
